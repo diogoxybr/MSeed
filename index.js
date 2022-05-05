@@ -2,6 +2,7 @@
 //Para rodar use: npm ini -y & npm
 
 //config inicial
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const { add } = require('nodemon/lib/rules')
@@ -35,9 +36,12 @@ app.get('/', (req, res) => {
     res.json({ message: 'Oi Express!' })
 })
 
+const DB_USER = process.env.DB_USER
+const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD)
+
 mongoose
     .connect(
-        'mongodb+srv://diogoxybr:00BhOZsNRUFmBO5Q@msapicluster.d4wed.mongodb.net/BancoDaAPI?retryWrites=true&w=majority'
+        `mongodb+srv://${DB_USER}:${DB_PASSWORD}@msapicluster.d4wed.mongodb.net/BancoDaAPI?retryWrites=true&w=majority`
     )
     .then(() => {
         console.log('Conectamos ao MongoDB !')
