@@ -1,5 +1,6 @@
 const router = require('express').Router()
 
+const res = require('express/lib/response')
 const Person = require('../models/Person')
 
 //Create - criação de dados
@@ -81,26 +82,21 @@ router.patch('/:id', async (req, res) => {
     }
 })
 
-// Delete = deletar dados
 router.delete('/:id', async (req, res) => {
-    //extrair o dado da requisição. pela url = req.params
     const id = req.params.id
-    const { nome, email } = req.body
-    const person = {
-        nome,
-        email,
+
+    const person = await Person.findOne({ _id: id })
+
+    if (!person) {
+        res.status(422).json({ message: 'O usuário não foi encontrado!' })
+        return
     }
 
     try {
 
-        const updatePerson = await Person.updateOne({ _id: id }, person)
+        await Person.deleteOne({ _id: id })
 
-        if (updatePerson.matchedCount === 0) {
-            res.status(422).json({ message: 'O usuário não foi encontrado' })
-            return
-        }
-
-        res.status(200).json(person)
+        res.status(200).json({ message: 'Usuário removido com sucesso!' })
     } catch (error) {
         res.status(500).json({ error: error })
     }
