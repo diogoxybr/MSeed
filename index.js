@@ -1,3 +1,7 @@
+//Caso seja e primeira vez rode: npm install express nodemon mongoose
+//Para rodar use: npm ini -y & npm
+
+
 //config inicial
 const express = require('express')
 const mongoose = require('mongoose')

@@ -55,4 +55,55 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ error: error })
     }
 })
+
+//Update - atualização de dados (PUT, PATCH)
+router.patch('/:id', async (req, res) => {
+    //extrair o dado da requisição. pela url = req.params
+    const id = req.params.id
+    const { nome, email } = req.body
+    const person = {
+        nome,
+        email,
+    }
+
+    try {
+
+        const updatePerson = await Person.updateOne({ _id: id }, person)
+
+        if (updatePerson.matchedCount === 0) {
+            res.status(422).json({ message: 'O usuário não foi encontrado' })
+            return
+        }
+
+        res.status(200).json(person)
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+})
+
+// Delete = deletar dados
+router.delete('/:id', async (req, res) => {
+    //extrair o dado da requisição. pela url = req.params
+    const id = req.params.id
+    const { nome, email } = req.body
+    const person = {
+        nome,
+        email,
+    }
+
+    try {
+
+        const updatePerson = await Person.updateOne({ _id: id }, person)
+
+        if (updatePerson.matchedCount === 0) {
+            res.status(422).json({ message: 'O usuário não foi encontrado' })
+            return
+        }
+
+        res.status(200).json(person)
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+})
+
 module.exports = router
