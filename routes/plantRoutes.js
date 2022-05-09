@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
     try {
         //criando dados
         await Plant.create(plant)
-        res.status(201).json({ message: 'Monitoramento feito com sucesso!' })
+        res.status(201).json({ message: 'Planta criada com sucesso!' })
         return
     } catch (error) {
         res.status(500).json({ error: error })
