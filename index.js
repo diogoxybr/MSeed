@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken')
 const { add } = require('nodemon/lib/rules')
 const app = express()
 
-const PORT = proces.env.PORT || 3000;
+const PORT = (process.env.PORT || 3000);
 
 //forma de ler JSON / middlewares
 app.use(
