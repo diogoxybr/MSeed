@@ -13,7 +13,6 @@ const app = express()
 
 const PORT = (process.env.PORT || 3000);
 
-
 //forma de ler JSON / middlewares
 app.use(
     express.urlencoded({
