@@ -11,6 +11,8 @@ const jwt = require('jsonwebtoken')
 const { add } = require('nodemon/lib/rules')
 const app = express()
 
+const PORT = process.env.PORT || 3000;
+
 
 //forma de ler JSON / middlewares
 app.use(
@@ -195,6 +197,6 @@ mongoose
     )
     .then(() => {
         console.log('Conectamos ao MongoDB !')
-        app.listen(process.env.port || 3000);
+        app.listen(PORT)
     })
     .catch((err) => console.log(err))
