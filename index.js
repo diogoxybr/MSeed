@@ -11,7 +11,6 @@ const jwt = require('jsonwebtoken')
 const { add } = require('nodemon/lib/rules')
 const app = express()
 
-const PORT = (process.env.PORT || 3000);
 
 //forma de ler JSON / middlewares
 app.use(
@@ -195,7 +194,7 @@ mongoose
         `mongodb+srv://${DB_USER}:${DB_PASSWORD}@msapicluster.d4wed.mongodb.net/BancoDaAPI?retryWrites=true&w=majority`
     )
     .then(() => {
-        console.log('Conectamos ao MongoDB ! pela porta:' + PORT)
-        app.listen(PORT)
+        console.log('Conectamos ao MongoDB !')
+        app.listen(process.env.PORT || 3000);
     })
     .catch((err) => console.log(err))
