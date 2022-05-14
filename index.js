@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken')
 const { add } = require('nodemon/lib/rules')
 const app = express()
 
+//Configuração de porta do heroku
 const PORT = process.env.PORT || 3000;
 
 //forma de ler JSON / middlewares
