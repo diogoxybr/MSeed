@@ -15,7 +15,7 @@ const cool = require('cool-ascii-faces');
 const path = require('path');
 
 //Configuração de porta do heroku
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 //forma de ler JSON / middlewares
 app.use(
@@ -218,6 +218,6 @@ mongoose
     )
     .then(() => {
         console.log('Conectamos ao MongoDB ! http://localhost:' + PORT)
-        app.listen(PORT)
+        app.listen(PORT, () => console.log(`Listening on ${PORT}`));
     })
     .catch((err) => console.log(err))
