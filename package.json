@@ -12,22 +12,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./index.js localhost 3000",
+    "dev": "nodemon index.js",
     "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/diogoxybr/MSeed.git"
-  },
-  "bugs": {
-    "url": "https://github.com/diogoxybr/MSeed/issues"
-  },
-  "homepage": "https://github.com/diogoxybr/MSeed#readme",
-  "description": "Projeto realizado na disciplina de Linguagens de programação da FESA(Faculdade de Engenharia Salvador Arena).",
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+  "license": "ISC"
 }
