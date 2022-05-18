@@ -8,8 +8,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const { add } = require('nodemon/lib/rules')
+
 const app = express()
+
+const cool = require('cool-ascii-faces');
+const path = require('path');
 
 //Configuração de porta do heroku
 const PORT = process.env.PORT || 3000;
@@ -186,6 +189,13 @@ app.post("/auth/login", async (req, res) => {
     }
 
 })
+
+express()
+app.use(express.static(path.join(__dirname, 'public')))
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+app.get('/', (req, res) => res.render('pages/index'))
+app.get('/cool', (req, res) => res.send(cool()))
 
 //Credenciais
 const DB_USER = process.env.DB_USER
