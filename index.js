@@ -122,7 +122,7 @@ app.post('/auth/register', async (req, res) => {
     const passwordHash = await bcrypt.hash(password, salt)
 
     //create user
-    //criar usuário
+    //criar usuario
     const user = new User({
         name,
         email,
