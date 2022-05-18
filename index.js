@@ -197,6 +197,17 @@ app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('pages/index'))
 app.get('/cool', (req, res) => res.send(cool()))
 
+app.get('/times', (req, res) => res.send(showTimes()))
+
+showTimes = () => {
+    let result = '';
+    const times = process.env.TIMES || 5;
+    for (i = 0; i < times; i++) {
+        result += i + ' ';
+    }
+    return result;
+}
+
 //Credenciais
 const DB_USER = process.env.DB_USER
 const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD)
