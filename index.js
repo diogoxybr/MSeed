@@ -196,7 +196,7 @@ mongoose
         `mongodb+srv://${DB_USER}:${DB_PASSWORD}@msapicluster.d4wed.mongodb.net/BancoDaAPI?retryWrites=true&w=majority`
     )
     .then(() => {
-        console.log('Conectamos ao MongoDB ! pela porta: ' + PORT)
+        console.log('Conectamos ao MongoDB ! http://localhost:' + PORT)
         app.listen(PORT)
     })
     .catch((err) => console.log(err))
