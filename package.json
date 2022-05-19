@@ -22,5 +22,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogoxybr/MSeed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diogoxybr/MSeed/issues"
+  },
+  "homepage": "https://github.com/diogoxybr/MSeed#readme",
+  "description": "Projeto realizado na disciplina de Linguagens de programação da FESA(Faculdade de Engenharia Salvador Arena).",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
 }
