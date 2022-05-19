@@ -31,7 +31,7 @@ app.use(express.json())
 const User = require('./models/User')
 
 // rotas da API
-const monitoringRoutes = require('./routes/monitoringRoutes')
+const monitoringRoutes = require('./routes/monitoringRoutes.js')
 app.use('/monitoring', monitoringRoutes)
 
 const plantRoutes = require('./routes/plantRoutes.js')
