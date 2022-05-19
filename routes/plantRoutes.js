@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
 const res = require('express/lib/response')
-const Plant = require('../models/Plant')
+const Plant = require('../models/plant')
 
 //Create - criação de dados
 router.post('/', async (req, res) => {
