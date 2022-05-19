@@ -14,7 +14,7 @@ const app = express()
 const cool = require('cool-ascii-faces');
 const path = require('path');
 
-//Configuração de porta do heroku
+//Configuracao de porta do heroku
 const PORT = process.env.PORT || 5000;
 
 //forma de ler JSON / middlewares
