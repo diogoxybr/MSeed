@@ -1,4 +1,4 @@
-name: DemoNewCD
+name: CI/CD Pipeline API
 on:
   workflow_dispatch:
 
