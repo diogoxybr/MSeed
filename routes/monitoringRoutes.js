@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
 const res = require('express/lib/response')
-const Monitoring = require('../models/Monitoring')
+const Monitoring = require('../models/monitoring')
 
 //Create - criação de dados
 router.post('/', async (req, res) => {
