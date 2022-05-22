@@ -37,6 +37,9 @@ app.use('/monitoring', monitoringRoutes)
 const plantRoutes = require('./routes/plantRoutes.js')
 app.use('/plant', plantRoutes)
 
+const commentRoutes = require('./routes/commentRoutes.js')
+app.use('/comment', commentRoutes)
+
 //Rota inicial - Endpoint
 //Open Route - Public Route
 app.get('/', (req, res) => {

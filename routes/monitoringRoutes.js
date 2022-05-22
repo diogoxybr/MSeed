@@ -7,15 +7,15 @@ const Monitoring = require('../models/monitoring')
 router.post('/', async (req, res) => {
 
     //req.body
-    //("planta: "String",    planta: String,    dataPlantio: String,    colheitas: Number,)
-    const { planta, dataPlantio, colheitas } = req.body
+    //("titulo: "String", descricao: "String", planta: "String",    planta: String,    dataPlantio: String,    colheitas: Number,)
+    const { titulo, descricao, planta, dataPlantio, colheitas } = req.body
 
     if (!dataPlantio) {
         res.status(422).json({ error: 'A data do plantio é obrigatória!' })
     }
 
     const monitoring = {
-        planta, dataPlantio, colheitas
+        titulo, descricao, planta, dataPlantio, colheitas
     }
 
     try {
@@ -60,9 +60,9 @@ router.get('/:id', async (req, res) => {
 router.patch('/:id', async (req, res) => {
     //extrair o dado da requisição. pela url = req.params
     const id = req.params.id
-    const { planta, dataPlantio, colheitas } = req.body
+    const { titulo, descricao, planta, dataPlantio, colheitas } = req.body
     const monitoring = {
-        planta, dataPlantio, colheitas
+        titulo, descricao, planta, dataPlantio, colheitas
     }
 
     try {
